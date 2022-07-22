@@ -1,3 +1,5 @@
+// Rushikesh
+
 import Header from "./Components/Header";
 import Slidebar from "./Components/Slidebar";
 import ServerStatus from "./Components/ServerStatus";
@@ -18,6 +20,5 @@ function dash() {
     </>
   );
 }
+
 export default dash;
-
-

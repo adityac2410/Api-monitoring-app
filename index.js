@@ -1,20 +1,22 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter,Route, Routes, } from "react-router-dom";
-import Project from "./Project";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { Route, Routes, Switch,outlet } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import App from "./Login/App";
-import Form from "./Form";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route exact path="/" element={<App />} />
-      <Route exact path="/Dashboard" element={< Dashboard/>} />
-      <Route exact path="/Project" element={< Project />} />
-    </Routes>
-  </BrowserRouter>
-);
+  
+  const rootElement = document.getElementById("root");
+  const root = createRoot(rootElement);
+  
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<App />} />
+        <Route exact path="/Dashboard" element={ <navigaete replace to = "/HeaderAndSlide" />}>
+          <Route path="Dashboard" element={< StatusAndTable/>}/>
+          <Route path="Project" element={< Form/>}/>
+        </Route>
+        {/* <Route exact path="/Project" element={<navigaete replace to = "/Project" />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
