@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-function Form(){
+
 function demo(){
-  console.log('demo()');
+  // console.log('demo()');
 const url= "https://api-monitor.scrobits.com/api/v1/projects";
 var data = '{"name": "scrobits_Aditya", "server_url":"https://scrobits.com","user_id" : 8 }';
 const params = {method:'POST',
@@ -11,7 +8,10 @@ headers: {"Content-Type":"application/json"},
 body : data,
 }
 fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
+
 }
+function Form(){
+
   return (
     
     <div className="content">
