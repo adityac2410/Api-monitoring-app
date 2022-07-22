@@ -1,17 +1,28 @@
 
+// import React, {useState} from 'react';
 function demo(){
-  // console.log('demo()');
-const url= "https://api-monitor.scrobits.com/api/v1/projects";
-var data = '{"name": "scrobits_Aditya", "server_url":"https://scrobits.com","user_id" : 8 }';
+  console.log('hello');
+ var name = document.getElementById('name').value;
+ var server_address =document.getElementById('S_add').value;
+ console.log(name);
+ console.log(server_address);
+const url= "https://api-monitor.scrobits.com/api/v1/projects/8";
+var data = '{"name": '+name+' , "server_url":'+server_address+',"user_id" : 8 }';
+// data = JSON.parse(data);
+// console.log(data);
 const params = {method:'POST',
 headers: {"Content-Type":"application/json"},
 body : data,
 }
 fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
+return data;
+
+
+
 
 }
 function Form(){
-
+  
   return (
     
     <div className="content">
@@ -20,7 +31,10 @@ function Form(){
         <h1 className="Form_heading">Add Project</h1>
         <br></br>
         <label for="name">Name</label>
-        <input id="name"  placeholder="eg. scrobits prod" />
+        <input id="name"
+        //  name="name" value={user.name}
+        // onChange={handleInputs}
+        placeholder="eg. scrobits prod" />
         <br></br>
         <label for="S_add">Server Adress</label>
         <input id="S_add"  placeholder="eg. scrobits.com" />
@@ -35,7 +49,7 @@ function Form(){
         <div id="mail_input">
         <label for="Mail_id">Email Address to notify (upto 3)</label>
        
-        <div ><button id="submit" onClick={demo()} type="submit">
+        <div ><button id="submit"  type="button" onClick= {demo()}>
         Add Project
         </button></div>
 
