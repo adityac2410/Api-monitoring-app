@@ -1,6 +1,5 @@
-
-// import React, {useState} from 'react';
 function demo(){
+  
   console.log('hello');
  var name = document.getElementById('name').value;
  var server_address =document.getElementById('S_add').value;
@@ -12,14 +11,11 @@ var data = '{"name": '+name+' , "server_url":'+server_address+',"user_id" : 8 }'
 // console.log(data);
 const params = {method:'POST',
 headers: {"Content-Type":"application/json"},
-body : data,
-}
+body : data}
+// console.log(data.message);
 fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
+alert("Data has been stored.")
 return data;
-
-
-
-
 }
 function Form(){
   
@@ -49,7 +45,7 @@ function Form(){
         <div id="mail_input">
         <label for="Mail_id">Email Address to notify (upto 3)</label>
        
-        <div ><button id="submit"  type="button" onClick= {demo()}>
+        <div ><button id="submit"  type="button" onClick={demo} >
         Add Project
         </button></div>
 
